@@ -12,6 +12,13 @@ export class TraidingViewComponent implements OnInit {
   constructor(yobitApiService: YobitApiService) {
     this.yobitApiService = yobitApiService;
   }
+  
+  request(method) {
+    console.log(method);
+    this.yobitApiService[method]().subscribe(res => {
+      console.log(res);
+    });
+  }
 
   ngOnInit() { }
 
